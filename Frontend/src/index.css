@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  --color-trust-navy: #082F61;
+  --color-trust-navy-dark: #041B3B;
+  --color-trust-navy-light: #0C438A;
+  --color-trust-blue: #1E64C8;
+  --color-trust-tertiary: #00C07C; /* Tertiary Emerald Accent */
+  --color-trust-sky: #EBF3FA;
+  --color-trust-accent: #D4AF37; /* Warm Gold accent */
+  --font-sans: 'Golos Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  touch-action: manipulation;
+  -webkit-text-size-adjust: 100%;
+}
+
+@layer utilities {
+  .bg-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .bg-glass-dark {
+    background: rgba(8, 47, 97, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .shadow-trust {
+    box-shadow: 0 10px 30px -5px rgba(8, 47, 97, 0.08), 0 4px 12px -2px rgba(8, 47, 97, 0.04);
+  }
+  .shadow-trust-hover {
+    box-shadow: 0 20px 40px -10px rgba(8, 47, 97, 0.16), 0 8px 20px -4px rgba(8, 47, 97, 0.08);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #082F61;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0C438A;
+}
+
+/* Hide scrollbar for carousel elements */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Gentle wave float animation for step images */
+@keyframes waveFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+.animate-wave-float {
+  animation: waveFloat 4.5s ease-in-out infinite;
+}
+
+@keyframes floatSmooth1 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatSmooth2 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float-1 {
+  animation: floatSmooth1 3.5s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatSmooth2 4.2s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: floatSmooth1 5s ease-in-out infinite 0.8s;
+}
+
+.animate-float-4 {
+  animation: floatSmooth2 4.8s ease-in-out infinite 1.2s;
+}
+
+/* Infinite Marquee Animations for 2-Row Testimonials */
+@keyframes marqueeLeftToRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes marqueeRightToLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeftToRight 40s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marqueeRightToLeft 40s linear infinite;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
