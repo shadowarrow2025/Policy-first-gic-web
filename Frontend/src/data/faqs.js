@@ -5,7 +5,7 @@ export const FAQS = [
   },
   {
     question: "How can I get a free insurance quote?",
-    answer: "You can click on 'Get a Free Quote' anywhere on our website, fill out our quick 3-step form, or call our advisors directly at +91 84388 64669 for immediate expert advice."
+    answer: "You can click on 'Get a Free Quote' anywhere on our website, fill out our quick 3-step form, or call our advisors directly at +91 88074 02191 for immediate expert advice."
   },
   {
     question: "What documents are required to initiate insurance coverage?",
@@ -13,7 +13,7 @@ export const FAQS = [
   },
   {
     question: "How do I file a cashless claim through Policy First?",
-    answer: "Filing a claim is seamless! Contact our dedicated claims desk at +91 98434 26959. Our claim manager will guide you through network cashless garage/hospital selection and approval within 30 minutes."
+    answer: "Filing a claim is seamless! Contact our dedicated claims desk at +91 88074 02191. Our claim manager will guide you through network cashless garage/hospital selection and approval within 30 minutes."
   },
   {
     question: "How quickly will I receive emergency roadside assistance?",

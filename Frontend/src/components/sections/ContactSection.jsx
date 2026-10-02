@@ -5,13 +5,7 @@ import { ScrollReveal } from '../common/ScrollReveal';
 import contactImg from '../../assets/images/contact-us-img.png';
 
 export const ContactSection = () => {
-  const phoneNumbers = [
-    '+91 84388 64669',
-    '+91 98434 26959',
-    '+91 98434 88869',
-    '+91 98940 16167',
-    '+91 98940 17797'
-  ];
+  const phoneNumber = '+91 88074 02191';
 
   return (
     <section id="contact" className="py-20 md:py-24 bg-white relative overflow-hidden border-b border-slate-100 select-none">
@@ -74,10 +68,10 @@ export const ContactSection = () => {
                       General Enquiries
                     </span>
                     <a
-                      href="mailto:admin@policyfirstgic.in"
+                      href="mailto:admin@policyfirst.co.in"
                       className="text-base sm:text-lg font-bold text-[#00642F] hover:text-[#0B4C38] transition-colors"
                     >
-                      admin@policyfirstgic.in
+                      admin@policyfirst.co.in
                     </a>
                   </div>
                 </div>
@@ -91,20 +85,17 @@ export const ContactSection = () => {
                   </div>
                   <div className="w-full">
                     <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
-                      Customer Sales Enquiries
+                      Customer Sales & Support
                     </span>
                     
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-1 text-sm sm:text-base font-bold text-[#00642F]">
-                      {phoneNumbers.map((num, idx) => (
-                        <a
-                          key={idx}
-                          href={`tel:${num.replace(/\s+/g, '')}`}
-                          className="hover:text-[#0B4C38] transition-colors inline-flex items-center gap-1.5"
-                        >
-                          <PhoneCall className="w-3.5 h-3.5 text-[#00642F]" />
-                          <span>{num}</span>
-                        </a>
-                      ))}
+                    <div className="pt-1 text-base sm:text-lg font-bold text-[#00642F]">
+                      <a
+                        href={`tel:${phoneNumber.replace(/\s+/g, '')}`}
+                        className="hover:text-[#0B4C38] transition-colors inline-flex items-center gap-2"
+                      >
+                        <PhoneCall className="w-4 h-4 text-[#00642F]" />
+                        <span>{phoneNumber}</span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -121,7 +112,7 @@ export const ContactSection = () => {
                       Coimbatore Office Address
                     </span>
                     <p className="text-sm sm:text-base font-medium text-[#2C2C2A] leading-relaxed">
-                      Sankar Business Centre, No 96 to 102, 3rd Floor, Above Federal Bank, Pappanaickenpalayam, Coimbatore - 641037.
+                      Sankar Business Centre, No 96 to 102, Above Federal Bank, Pappanaickenpalayam, Coimbatore - 641037.
                     </p>
                   </div>
                 </div>

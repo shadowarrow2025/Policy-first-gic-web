@@ -34,7 +34,7 @@ export const ClaimsSupportSection = ({ onOpenClaimModal }) => {
                   Report Incident
                 </h4>
                 <p className="text-sm text-slate-500 leading-relaxed font-normal">
-                  Call our claims officer immediately at +91 98434 26959 or ping us on WhatsApp.
+                  Call our claims officer immediately at +91 88074 02191 or ping us on WhatsApp.
                 </p>
               </div>
 

@@ -23,7 +23,7 @@ export function App() {
     if (contactElem) {
       contactElem.scrollIntoView({ behavior: 'smooth' });
     } else {
-      window.location.href = 'tel:+918438864669';
+      window.location.href = 'tel:+918807402191';
     }
   };
 
