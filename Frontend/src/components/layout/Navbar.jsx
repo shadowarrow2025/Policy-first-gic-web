@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import policyFirstLogo from '../../assets/images/Policy First Green Insurance Emblem.png';
+import policyFirstLogo from '../../assets/policyfirstgic.jpeg';
 import { CONTACT_INFO } from '../../config/contact';
 import { Button } from '../common/Button';
 
@@ -37,12 +37,12 @@ export const Navbar = ({ onOpenQuoteModal }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
 
-          {/* Policy First Logo - Enlarged Size */}
+          {/* Policy First General Insurance Logo */}
           <a href="#hero" className="flex items-center shrink-0 group py-0.5">
             <img
               src={policyFirstLogo}
               alt="Policy First General Insurance"
-              className="h-20 sm:h-24 md:h-28 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform group-hover:scale-105 rounded-lg"
             />
           </a>
 
@@ -52,7 +52,7 @@ export const Navbar = ({ onOpenQuoteModal }) => {
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3.5 py-2 text-sm font-semibold text-[#00642F] hover:bg-slate-50 rounded-lg transition-colors whitespace-nowrap"
+                className="px-3.5 py-2 text-sm font-semibold text-[#2B333B] hover:text-[#C81E27] hover:bg-red-50/60 rounded-lg transition-colors whitespace-nowrap"
               >
                 {link.name}
               </a>
@@ -61,14 +61,14 @@ export const Navbar = ({ onOpenQuoteModal }) => {
 
           {/* Right Action Items */}
           <div className="hidden sm:flex items-center gap-4 shrink-0">
-            {/* Get Quote Button: Same Outline Style with Green Brand Colors */}
+            {/* Get Quote Button: Outline Style with Policy First Brand Red */}
             <Button
               variant="outline"
               size="md"
               icon={ArrowRight}
               iconPosition="right"
               onClick={() => onOpenQuoteModal()}
-              className="whitespace-nowrap !border-[#00642F] !text-[#00642F] hover:!bg-[#00642F] hover:!text-white hover:!border-[#00642F] focus:!ring-[#00642F]"
+              className="whitespace-nowrap !border-[#C81E27] !text-[#C81E27] hover:!bg-[#C81E27] hover:!text-white hover:!border-[#C81E27] focus:!ring-[#C81E27]"
             >
               Get a Quote
             </Button>
@@ -80,16 +80,16 @@ export const Navbar = ({ onOpenQuoteModal }) => {
               variant="outline"
               size="sm"
               onClick={() => onOpenQuoteModal()}
-              className="sm:hidden !border-[#00642F] !text-[#00642F] hover:!bg-[#00642F] hover:!text-white"
+              className="sm:hidden !border-[#C81E27] !text-[#C81E27] hover:!bg-[#C81E27] hover:!text-white"
             >
               Quote
             </Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-[#00642F] hover:bg-emerald-50 focus:outline-none"
+              className="p-2 rounded-xl text-[#2B333B] hover:bg-red-50 focus:outline-none"
               aria-label="Toggle Menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6 text-[#00642F]" /> : <Menu className="w-6 h-6 text-[#00642F]" />}
+              {mobileMenuOpen ? <X className="w-6 h-6 text-[#C81E27]" /> : <Menu className="w-6 h-6 text-[#2B333B]" />}
             </button>
           </div>
 
@@ -105,7 +105,7 @@ export const Navbar = ({ onOpenQuoteModal }) => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2.5 text-base font-semibold text-[#00642F] hover:bg-slate-50 rounded-xl transition-colors"
+                className="block px-4 py-2.5 text-base font-semibold text-[#2B333B] hover:text-[#C81E27] hover:bg-red-50/60 rounded-xl transition-colors"
               >
                 {link.name}
               </a>
@@ -113,7 +113,7 @@ export const Navbar = ({ onOpenQuoteModal }) => {
           </div>
 
           <div className="pt-4 border-t border-slate-100 space-y-3">
-            <div className="text-xs font-bold text-[#00642F] uppercase tracking-wider px-4">
+            <div className="text-xs font-bold text-[#C81E27] uppercase tracking-wider px-4">
               Direct Contact Lines
             </div>
             <div className="grid grid-cols-1 gap-2 px-2">
@@ -121,10 +121,10 @@ export const Navbar = ({ onOpenQuoteModal }) => {
                 <a
                   key={idx}
                   href={`tel:${phone.raw}`}
-                  className="flex items-center justify-between p-3 bg-emerald-50/50 rounded-xl text-xs font-semibold text-[#00642F] hover:bg-emerald-100 hover:text-[#32CD32] transition-colors"
+                  className="flex items-center justify-between p-3 bg-red-50/50 rounded-xl text-xs font-semibold text-[#2B333B] hover:bg-red-100/70 hover:text-[#C81E27] transition-colors"
                 >
                   <span>{phone.label}</span>
-                  <span className="font-bold text-[#00642F]">{phone.number}</span>
+                  <span className="font-bold text-[#C81E27]">{phone.number}</span>
                 </a>
               ))}
             </div>
@@ -137,7 +137,7 @@ export const Navbar = ({ onOpenQuoteModal }) => {
                 setMobileMenuOpen(false);
                 onOpenQuoteModal();
               }}
-              className="!border-[#00642F] !text-[#00642F] hover:!bg-[#00642F] hover:!text-white"
+              className="!border-[#C81E27] !text-[#C81E27] hover:!bg-[#C81E27] hover:!text-white"
             >
               Get a Free Quote Now
             </Button>

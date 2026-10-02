@@ -9,8 +9,8 @@ export const AboutUsSection = ({ onOpenQuoteModal }) => {
     <section id="about-us" className="py-20 md:py-28 bg-white border-b border-slate-100 relative overflow-hidden select-none">
       
       {/* Background Soft Glows */}
-      <div className="absolute top-1/3 left-10 w-80 h-80 bg-emerald-50/50 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-emerald-50/50 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-10 w-80 h-80 bg-red-50/50 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-red-50/50 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -55,9 +55,24 @@ export const AboutUsSection = ({ onOpenQuoteModal }) => {
                   />
                 </div>
 
-                {/* Hand-drawn Green Sparkle / Accent Doodle at bottom-left */}
+                {/* Floating Proprietorship Sathiya Card */}
+                <div className="absolute top-4 -left-2 sm:-left-6 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-3.5 shadow-[0_12px_30px_rgba(0,0,0,0.12)] border border-slate-100/90 z-20 flex items-center gap-3 animate-in fade-in duration-300">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#E22419] to-[#991B1B] text-white flex items-center justify-center font-extrabold text-base shadow-sm">
+                    S
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase font-extrabold tracking-wider text-[#E22419] block leading-none mb-1">
+                      Proprietorship
+                    </span>
+                    <p className="text-xs sm:text-sm font-extrabold text-[#041B3B] leading-tight">
+                      Sathiya
+                    </p>
+                  </div>
+                </div>
+
+                {/* Hand-drawn Red Sparkle / Accent Doodle at bottom-left */}
                 <div className="absolute bottom-2 left-2 sm:left-4 opacity-75 pointer-events-none z-20">
-                  <svg width="36" height="32" viewBox="0 0 36 32" fill="none" stroke="#00642F" strokeWidth="2.5" strokeLinecap="round">
+                  <svg width="36" height="32" viewBox="0 0 36 32" fill="none" stroke="#E22419" strokeWidth="2.5" strokeLinecap="round">
                     <path d="M4 22 L14 12 M18 4 L18 18 M22 22 L32 12" />
                   </svg>
                 </div>
@@ -82,7 +97,7 @@ export const AboutUsSection = ({ onOpenQuoteModal }) => {
 
                     {/* User 2 */}
                     <div className="flex items-center gap-2.5">
-                      <div className="w-7 h-7 rounded-full bg-[#00642F] text-white font-bold text-[10px] flex items-center justify-center shrink-0 shadow-xs">
+                      <div className="w-7 h-7 rounded-full bg-[#E22419] text-white font-bold text-[10px] flex items-center justify-center shrink-0 shadow-xs">
                         DN
                       </div>
                       <div className="min-w-0">
@@ -93,7 +108,7 @@ export const AboutUsSection = ({ onOpenQuoteModal }) => {
 
                     {/* User 3 */}
                     <div className="flex items-center gap-2.5">
-                      <div className="w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shrink-0 shadow-xs">
+                      <div className="w-7 h-7 rounded-full bg-red-700 text-white font-bold text-[10px] flex items-center justify-center shrink-0 shadow-xs">
                         SM
                       </div>
                       <div className="min-w-0">
@@ -107,7 +122,7 @@ export const AboutUsSection = ({ onOpenQuoteModal }) => {
                   <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center">
                     <button 
                       onClick={() => onOpenQuoteModal ? onOpenQuoteModal() : null}
-                      className="text-[10px] font-bold text-[#00642F] hover:text-[#0B4C38] flex items-center gap-1 cursor-pointer transition-colors"
+                      className="text-[10px] font-bold text-[#E22419] hover:text-[#991B1B] flex items-center gap-1 cursor-pointer transition-colors"
                     >
                       <span>See Verified Reviews</span>
                       <span className="text-xs">›</span>
@@ -132,19 +147,19 @@ export const AboutUsSection = ({ onOpenQuoteModal }) => {
                 {/* Heading Matched to "Our Work Process" scale */}
                 <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#2C2C2A] leading-snug">
                   Built on Trust. <br />
-                  <span className="text-[#00642F]">Driven by Protection.</span>
+                  <span className="text-[#E22419]">Driven by Protection.</span>
                 </h2>
 
                 {/* Content Matched to Theme Body Font Size */}
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-lg pt-1">
-                  Policy First General Insurance is a dedicated insurance advisory firm based in Coimbatore. We help individuals, families, and commercial enterprises choose optimal coverage from India's top 25+ insurers with zero hidden charges and guaranteed 24/7 cashless claim support.
+                  Policy First General Insurance is a dedicated insurance advisory firm based in Ganapathy, Coimbatore. Led under the proprietorship of Sathiya, we help individuals, families, and commercial enterprises choose optimal coverage from India's top 25+ insurers with zero hidden charges and guaranteed 24/7 cashless claim support.
                 </p>
 
                 {/* Pill CTA Button (Figma Style) */}
                 <div className="pt-4">
                   <button
                     onClick={() => onOpenQuoteModal ? onOpenQuoteModal() : null}
-                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#00642F] hover:bg-[#004e24] text-white font-bold text-sm sm:text-base shadow-lg shadow-[#00642F]/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#E22419] hover:bg-[#B91C1C] text-white font-bold text-sm sm:text-base shadow-lg shadow-[#E22419]/25 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
                   >
                     <span>Get Instant Quote</span>
                     <ArrowRight className="w-4 h-4 shrink-0" />

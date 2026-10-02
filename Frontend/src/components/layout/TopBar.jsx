@@ -13,10 +13,10 @@ export const TopBar = () => {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-1.5 text-slate-300">
             <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-            <span className="truncate max-w-xs xl:max-w-md">Pappanaickenpalayam, Coimbatore</span>
+            <span className="truncate max-w-xs xl:max-w-md">Ganapathy, Coimbatore</span>
           </div>
           <div className="flex items-center gap-1.5 text-slate-300">
-            <Clock className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+            <Clock className="w-3.5 h-3.5 text-red-400 shrink-0" />
             <span>{CONTACT_INFO.workingHours}</span>
           </div>
         </div>
@@ -28,7 +28,7 @@ export const TopBar = () => {
             href={`mailto:${CONTACT_INFO.email}`} 
             className="flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors"
           >
-            <Mail className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+            <Mail className="w-3.5 h-3.5 text-red-400 shrink-0" />
             <span>{CONTACT_INFO.email}</span>
           </a>
 
@@ -37,11 +37,11 @@ export const TopBar = () => {
             <button
               onClick={() => setShowPhoneDropdown(!showPhoneDropdown)}
               onMouseEnter={() => setShowPhoneDropdown(true)}
-              className="flex items-center gap-1.5 bg-blue-500/20 text-blue-200 px-3 py-1 rounded-full border border-blue-400/30 hover:bg-blue-500/30 transition-all cursor-pointer font-medium"
+              className="flex items-center gap-1.5 bg-red-500/20 text-red-200 px-3 py-1 rounded-full border border-red-400/30 hover:bg-red-500/30 transition-all cursor-pointer font-medium"
             >
-              <PhoneCall className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+              <PhoneCall className="w-3.5 h-3.5 text-red-400 animate-pulse" />
               <span>Get Free Quote: {CONTACT_INFO.primaryPhone}</span>
-              <ChevronDown className="w-3 h-3 text-blue-300 ml-0.5" />
+              <ChevronDown className="w-3 h-3 text-red-300 ml-0.5" />
             </button>
 
             {showPhoneDropdown && (

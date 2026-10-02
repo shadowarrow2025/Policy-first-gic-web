@@ -82,7 +82,7 @@ export const QuoteModal = ({ isOpen, onClose, initialProduct = 'two-wheeler' }) 
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                placeholder="+91 88074 XXXXX"
+                placeholder="+91 84388 XXXXX"
                 className="w-full pl-9 pr-3 py-2 bg-white border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-[#082F61] focus:outline-none"
               />
             </div>
@@ -129,7 +129,7 @@ export const QuoteModal = ({ isOpen, onClose, initialProduct = 'two-wheeler' }) 
         </form>
       ) : (
         <div className="text-center py-6 space-y-4">
-          <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+          <div className="w-14 h-14 rounded-full bg-red-100 text-[#E22419] flex items-center justify-center mx-auto">
             <CheckCircle2 className="w-8 h-8" />
           </div>
           <h4 className="text-xl font-bold text-slate-900">Request Sent Successfully!</h4>

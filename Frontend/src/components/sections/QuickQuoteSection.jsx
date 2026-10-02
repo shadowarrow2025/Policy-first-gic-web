@@ -54,11 +54,11 @@ export const QuickQuoteSection = ({ initialCategory = 'two-wheeler' }) => {
               <div key={s.num} className="flex items-center gap-2">
                 <div className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm transition-colors ${
                   submitted
-                    ? 'bg-emerald-600 text-white'
+                    ? 'bg-[#E22419] text-white'
                     : step === s.num
                     ? 'bg-[#082F61] text-white shadow-md'
                     : step > s.num
-                    ? 'bg-emerald-600 text-white'
+                    ? 'bg-[#E22419] text-white'
                     : 'bg-slate-200 text-slate-600'
                 }`}>
                   {step > s.num || submitted ? <Check className="w-5 h-5" /> : s.num}
@@ -96,7 +96,7 @@ export const QuickQuoteSection = ({ initialCategory = 'two-wheeler' }) => {
                             {p.shortTitle} Plan
                           </p>
                         </div>
-                        {selectedProduct === p.id && <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />}
+                        {selectedProduct === p.id && <CheckCircle2 className="w-5 h-5 text-red-400 shrink-0" />}
                       </button>
                     ))}
                   </div>
@@ -215,7 +215,7 @@ export const QuickQuoteSection = ({ initialCategory = 'two-wheeler' }) => {
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-slate-500 font-medium">Phone</span>
-                      <span className="text-sm font-bold text-emerald-700">{formData.phone || CONTACT_INFO.primaryPhone}</span>
+                      <span className="text-sm font-bold text-[#E22419]">{formData.phone || CONTACT_INFO.primaryPhone}</span>
                     </div>
                   </div>
 
@@ -230,7 +230,7 @@ export const QuickQuoteSection = ({ initialCategory = 'two-wheeler' }) => {
                     <Button type="button" variant="secondary" onClick={() => setStep(2)}>
                       Back
                     </Button>
-                    <Button type="submit" variant="accent" icon={CheckCircle2} iconPosition="left">
+                    <Button type="submit" variant="accent" icon={CheckCircle2} iconPosition="left" className="bg-[#E22419] hover:bg-[#C81E27]">
                       Submit Quote Request
                     </Button>
                   </div>
@@ -240,7 +240,7 @@ export const QuickQuoteSection = ({ initialCategory = 'two-wheeler' }) => {
           ) : (
             /* SUBMITTED SUCCESS VIEW */
             <div className="text-center py-8 space-y-4 animate-in zoom-in-95 duration-200">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 rounded-full bg-red-100 text-[#E22419] flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
               <h3 className="text-2xl font-extrabold text-slate-900">Quote Request Submitted!</h3>

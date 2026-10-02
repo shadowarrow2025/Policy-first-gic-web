@@ -11,8 +11,8 @@ export const FinalCTASection = ({ onOpenQuoteModal }) => {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
         
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm font-semibold text-blue-200 backdrop-blur-md">
-          <ShieldCheck className="w-4 h-4 text-emerald-400" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs sm:text-sm font-semibold text-red-200 backdrop-blur-md">
+          <ShieldCheck className="w-4 h-4 text-[#E22419]" />
           <span>Coimbatore's Reliable Insurance Partner</span>
         </div>
 
@@ -20,7 +20,7 @@ export const FinalCTASection = ({ onOpenQuoteModal }) => {
           Protect What Matters Most.
         </h2>
 
-        <p className="text-base sm:text-lg text-blue-100/90 font-medium italic">
+        <p className="text-base sm:text-lg text-red-100/90 font-medium italic">
           Today • Tomorrow • Always With You
         </p>
 
@@ -35,7 +35,7 @@ export const FinalCTASection = ({ onOpenQuoteModal }) => {
             icon={ArrowRight}
             iconPosition="right"
             onClick={() => onOpenQuoteModal()}
-            className="w-full sm:w-auto shadow-2xl"
+            className="w-full sm:w-auto shadow-2xl bg-[#E22419] hover:bg-[#C81E27]"
           >
             Get a Free Quote
           </Button>
@@ -44,7 +44,7 @@ export const FinalCTASection = ({ onOpenQuoteModal }) => {
             href={`tel:${CONTACT_INFO.primaryPhone}`}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-base backdrop-blur-md transition-all duration-300"
           >
-            <PhoneCall className="w-5 h-5 text-emerald-400" />
+            <PhoneCall className="w-5 h-5 text-red-400" />
             <span>Talk to an Expert</span>
           </a>
         </div>

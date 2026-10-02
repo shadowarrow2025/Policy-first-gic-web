@@ -70,7 +70,7 @@ export const HeroSection = ({ onOpenQuoteModal }) => {
     <section id="hero" className="relative bg-white text-slate-800 overflow-hidden pt-4 sm:pt-6">
 
       {/* Background Soft Glow */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-emerald-100/35 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-red-100/35 rounded-full blur-3xl pointer-events-none -z-10" />
 
       {/* ======= SIDE BY SIDE: Text Left | Graphic & Floating Badges Right ======= */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8">
@@ -84,7 +84,7 @@ export const HeroSection = ({ onOpenQuoteModal }) => {
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#2C2C2A] leading-[1.18]">
                 Drive Today, <br />
                 Worry Less with <br />
-                <span className="inline-block mt-2 bg-[#00642F] text-white px-3.5 sm:px-4 py-1 rounded-xl text-[0.88em] shadow-md shadow-[#00642F]/20 font-bold">
+                <span className="inline-block mt-2 bg-[#E22419] text-white px-3.5 sm:px-4 py-1 rounded-xl text-[0.88em] shadow-md shadow-[#E22419]/20 font-bold">
                   Trusted Car Insurance
                 </span>
               </h1>
@@ -98,7 +98,7 @@ export const HeroSection = ({ onOpenQuoteModal }) => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-3">
                 <button
                   onClick={() => onOpenQuoteModal()}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-[#00642F] hover:bg-[#004e24] text-white font-bold text-sm sm:text-base shadow-md shadow-[#00642F]/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-[#E22419] hover:bg-[#B91C1C] text-white font-bold text-sm sm:text-base shadow-md shadow-[#E22419]/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
                 >
                   <span>Get a Free Quote</span>
                   <ArrowRight className="w-4 h-4 shrink-0" />
@@ -106,7 +106,7 @@ export const HeroSection = ({ onOpenQuoteModal }) => {
 
                 <a
                   href={`tel:${CONTACT_INFO.primaryPhone}`}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-[#00642F] border-2 border-[#00642F] text-[#00642F] hover:text-white font-bold text-sm sm:text-base transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-[#E22419] border-2 border-[#E22419] text-[#E22419] hover:text-white font-bold text-sm sm:text-base transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
                 >
                   <span>Talk to an Advisor</span>
                 </a>
@@ -122,7 +122,7 @@ export const HeroSection = ({ onOpenQuoteModal }) => {
               <div className="relative mx-auto w-full max-w-[760px] px-1 sm:px-4 py-2">
                 <img
                   src={heroImg}
-                  alt="Trusted Car Insurance - Policy First"
+                  alt="Trusted Car Insurance - Policy First General Insurance"
                   className="w-full h-auto object-contain select-none filter drop-shadow-xl"
                   draggable={false}
                 />

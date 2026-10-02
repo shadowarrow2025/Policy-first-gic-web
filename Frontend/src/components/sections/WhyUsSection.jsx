@@ -1,21 +1,39 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { WHY_US_FEATURES } from '../../data/whyUs';
-import { Zap, UserCheck, Headphones, Heart, ShieldCheck, FileCheck, Award, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
+import { 
+  Users, 
+  TrendingUp, 
+  Car, 
+  Truck, 
+  Bike, 
+  Headphones, 
+  ShieldCheck, 
+  Award, 
+  UserCheck,
+  ArrowRight,
+  Shield
+} from 'lucide-react';
 import { ScrollReveal } from '../common/ScrollReveal';
 
 const ICON_MAP = {
-  Zap: Zap,
-  UserCheck: UserCheck,
-  Headphones: Headphones,
-  Heart: Heart,
-  ShieldCheck: ShieldCheck,
-  FileCheck: FileCheck,
-  Award: Award,
-  Clock: Clock
+  ShieldUsers: () => (
+    <div className="relative inline-flex items-center justify-center">
+      <Shield className="w-10 h-10 text-[#E22419] stroke-[1.9] fill-[#E22419]/10" />
+      <Users className="w-5 h-5 text-[#E22419] absolute stroke-[2.2]" />
+    </div>
+  ),
+  TrendingUp: () => <TrendingUp className="w-10 h-10 text-[#E22419] stroke-[2.2]" />,
+  Car: () => <Car className="w-10 h-10 text-[#E22419] stroke-[2.2]" />,
+  Truck: () => <Truck className="w-10 h-10 text-[#E22419] stroke-[2.2]" />,
+  Bike: () => <Bike className="w-10 h-10 text-[#E22419] stroke-[2.2]" />,
+  Headphones: () => <Headphones className="w-10 h-10 text-[#E22419] stroke-[2.2]" />,
+  ShieldCheck: () => <ShieldCheck className="w-10 h-10 text-[#E22419] stroke-[2.2]" />,
+  Award: () => <Award className="w-10 h-10 text-[#E22419] stroke-[2.2]" />,
+  UserCheck: () => <UserCheck className="w-10 h-10 text-[#E22419] stroke-[2.2]" />
 };
 
-export const WhyUsSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export const WhyUsSection = ({ onOpenQuoteModal }) => {
+  const [currentPage, setCurrentPage] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -23,26 +41,28 @@ export const WhyUsSection = () => {
   const startXRef = useRef(0);
   const isDraggingRef = useRef(false);
   const dragOffsetRef = useRef(0);
-  const total = WHY_US_FEATURES.length;
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % total);
-  };
+  const totalPages = 3;
+  const cardsPerPage = 3;
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + total) % total);
-  };
+  const handleNext = useCallback(() => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  }, [totalPages]);
 
-  // 5-Second Auto-play timer (pauses on hover or drag)
+  const handlePrev = useCallback(() => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  }, [totalPages]);
+
+  // 4.5-Second Auto-play continuous loop (pauses when hovered or dragged)
   useEffect(() => {
     if (isHovered || isDragging) return;
     const interval = setInterval(() => {
       handleNext();
-    }, 5000);
+    }, 4500);
     return () => clearInterval(interval);
-  }, [isHovered, isDragging, currentIndex]);
+  }, [isHovered, isDragging, handleNext]);
 
-  // Drag & Swipe Handlers
+  // Mouse Drag Handlers
   const handleMouseDown = (e) => {
     isDraggingRef.current = true;
     setIsDragging(true);
@@ -65,13 +85,14 @@ export const WhyUsSection = () => {
     const diff = dragOffsetRef.current;
     setDragOffset(0);
 
-    if (diff < -45) {
+    if (diff < -60) {
       handleNext();
-    } else if (diff > 45) {
+    } else if (diff > 60) {
       handlePrev();
     }
   };
 
+  // Touch Swipe Handlers for Mobile / Tablet
   const handleTouchStart = (e) => {
     isDraggingRef.current = true;
     setIsDragging(true);
@@ -86,13 +107,23 @@ export const WhyUsSection = () => {
     setDragOffset(diff);
   };
 
-  // Circular offset distance calculation [-3, -2, -1, 0, 1, 2, 3, 4]
-  const getOffset = (index) => {
-    let diff = (index - currentIndex) % total;
-    if (diff > total / 2) diff -= total;
-    if (diff < -total / 2) diff += total;
-    return diff;
+  const handleCardClick = (category) => {
+    if (onOpenQuoteModal) {
+      onOpenQuoteModal(category);
+    } else {
+      const contactElem = document.getElementById('contact');
+      if (contactElem) {
+        contactElem.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
+
+  // Chunk 9 features into exactly 3 pages with 3 cards each
+  const pages = [
+    WHY_US_FEATURES.slice(0, 3),
+    WHY_US_FEATURES.slice(3, 6),
+    WHY_US_FEATURES.slice(6, 9)
+  ];
 
   return (
     <section 
@@ -102,37 +133,23 @@ export const WhyUsSection = () => {
         setIsHovered(false);
         handleMouseUpOrLeave();
       }}
-      className="pt-20 pb-28 bg-gradient-to-b from-[#DCFCE7]/90 via-[#F0FDF4]/85 to-transparent relative overflow-hidden select-none"
+      className="py-16 sm:py-20 lg:py-24 bg-[#E22419] text-white relative overflow-hidden select-none"
     >
-      {/* Atmospheric Smoky Glowing Ambient Mist */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-emerald-300/35 via-teal-200/20 to-transparent blur-3xl pointer-events-none -z-0" />
-      <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none -z-0" />
-      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-teal-100/40 rounded-full blur-3xl pointer-events-none -z-0" />
-
-      {/* Multi-layered Organic Smoke Fog Transition at Bottom */}
-      <div className="absolute -bottom-6 inset-x-0 h-44 bg-gradient-to-t from-slate-50 via-slate-50/80 to-transparent blur-lg pointer-events-none z-10" />
-      <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-slate-50 via-slate-50/60 to-transparent pointer-events-none z-10" />
-
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
+        {/* Section Header Matching AssureBharat Clean Title & Subtitle */}
         <ScrollReveal animation="fade-up" delay={100}>
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#041B3B]/10 text-[#041B3B] border border-[#041B3B]/20 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-sm">
-              <span>THE TRUST ADVANTAGE</span>
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#2C2C2A] leading-tight">
-              Insurance Made Personal
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              Insurance plans tailored for your needs
             </h2>
-
-            <p className="mt-3.5 text-base sm:text-lg text-[#3D4A44] leading-relaxed max-w-2xl font-medium">
-              Tailored Plans, Fast Claims, And Round-The-Clock Care Built To Fit Your Lifestyle And Peace Of Mind.
+            <p className="mt-3.5 text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto font-normal">
+              Compare, choose, and secure the right coverage with expert-backed guidance.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* 3D Circular Floating Center Stage Container (Wide / Landscape Card Proportions) */}
+        {/* Carousel Viewport Container */}
         <div 
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
@@ -140,129 +157,82 @@ export const WhyUsSection = () => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleMouseUpOrLeave}
-          className="relative w-full h-[360px] sm:h-[390px] lg:h-[410px] flex items-center justify-center overflow-hidden cursor-grab active:cursor-grabbing"
+          className="relative w-full overflow-hidden cursor-grab active:cursor-grabbing pb-2"
         >
-          {WHY_US_FEATURES.map((feature, idx) => {
-            const IconComponent = ICON_MAP[feature.iconName] || ShieldCheck;
-            const offset = getOffset(idx);
-            const isCenter = offset === 0;
-            const isNear = Math.abs(offset) === 1;
-            const isFar = Math.abs(offset) === 2;
-            const isHidden = Math.abs(offset) > 2;
-
-            // Step with generous distinct gap between cards
-            const stepPx = typeof window !== 'undefined' 
-              ? (window.innerWidth < 640 ? 330 : window.innerWidth < 1024 ? 390 : 450)
-              : 450;
-
-            const translateX = offset * stepPx + dragOffset;
-
-            // 3D Transforms
-            let translateY = 28;
-            let scale = 0.88;
-            let opacity = 0.35;
-            let zIndex = 10;
-
-            if (isCenter) {
-              translateY = -18;
-              scale = 1.04;
-              opacity = 1;
-              zIndex = 30;
-            } else if (isNear) {
-              translateY = 16;
-              scale = 0.94;
-              opacity = 0.85;
-              zIndex = 20;
-            } else if (isFar) {
-              translateY = 28;
-              scale = 0.88;
-              opacity = 0.45;
-              zIndex = 10;
-            } else {
-              opacity = 0;
-              zIndex = 0;
-            }
-
-            return (
-              <div
-                key={idx}
-                onClick={() => {
-                  if (!isDragging && offset !== 0) {
-                    setCurrentIndex(idx);
-                  }
-                }}
-                style={{
-                  transform: `translateX(${translateX}px) translateY(${translateY}px) scale(${scale})`,
-                  opacity: isHidden ? 0 : opacity,
-                  zIndex: zIndex,
-                  transition: isDragging ? 'none' : 'all 500ms cubic-bezier(0.2, 1, 0.3, 1)',
-                  pointerEvents: isHidden ? 'none' : 'auto'
-                }}
-                className={`absolute w-[300px] sm:w-[360px] lg:w-[410px] h-[250px] sm:h-[270px] lg:h-[285px] rounded-3xl p-6 sm:p-7 flex flex-col items-center text-center justify-center cursor-pointer ${
-                  isCenter
-                    ? 'bg-white shadow-[0_20px_50px_rgba(0,100,47,0.14)] border border-[#00642F]/30 ring-2 ring-emerald-500/15'
-                    : isNear
-                      ? 'bg-white/95 shadow-md border border-emerald-100 hover:opacity-100 hover:scale-[0.96]'
-                      : 'bg-white/70 shadow-none border border-slate-200/50'
-                }`}
+          {/* Slider Horizontal Track (3 full-width pages) */}
+          <div 
+            className="flex"
+            style={{
+              transform: `translateX(calc(-${(currentPage * 100) / totalPages}% + ${dragOffset}px))`,
+              transition: isDragging ? 'none' : 'transform 500ms cubic-bezier(0.25, 1, 0.5, 1)',
+              width: `${totalPages * 100}%`
+            }}
+          >
+            {pages.map((pageFeatures, pageIdx) => (
+              <div 
+                key={pageIdx}
+                style={{ width: `${100 / totalPages}%` }}
+                className="w-full shrink-0 px-2 sm:px-3"
               >
-                {/* Circular Icon Badge */}
-                <div className={`rounded-full flex items-center justify-center mb-3 sm:mb-4 transition-all duration-300 shadow-sm ${
-                  isCenter
-                    ? 'w-14 h-14 bg-[#00642F] text-white border-2 border-[#00642F] scale-105 shadow-emerald-900/15'
-                    : 'w-12 h-12 bg-[#E6FFE4] text-[#00642F] border border-[#00642F]/20'
-                }`}>
-                  <IconComponent className={isCenter ? 'w-7 h-7' : 'w-5 h-5'} />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
+                  {pageFeatures.map((feature) => {
+                    const IconComp = ICON_MAP[feature.iconName] || ShieldCheck;
+                    
+                    return (
+                      <div 
+                        key={feature.id}
+                        onClick={() => handleCardClick(feature.category)}
+                        className="group bg-white rounded-3xl sm:rounded-[28px] p-7 sm:p-8 h-[290px] sm:h-[320px] lg:h-[330px] flex flex-col justify-between shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-white/20"
+                      >
+                        {/* Top Left Icon */}
+                        <div className="pt-1 flex items-center">
+                          <IconComp />
+                        </div>
+
+                        {/* Bottom Content: Title, Description & Learn More */}
+                        <div className="mt-auto space-y-2">
+                          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight leading-snug group-hover:text-[#E22419] transition-colors">
+                            {feature.title}
+                          </h3>
+
+                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal line-clamp-2">
+                            {feature.description}
+                          </p>
+
+                          <div className="pt-2 flex items-center">
+                            <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#E22419] group-hover:gap-2.5 transition-all">
+                              <span>Learn More</span>
+                              <ArrowRight className="w-4 h-4 stroke-[2.2]" />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-
-                {/* Card Title */}
-                <h3 className={`font-bold mb-2 transition-colors ${
-                  isCenter
-                    ? 'text-xl sm:text-2xl text-[#00642F]'
-                    : 'text-base sm:text-lg font-semibold text-[#2C2C2A]'
-                }`}>
-                  {feature.title}
-                </h3>
-
-                {/* Card Description */}
-                <p className={`leading-relaxed transition-colors max-w-sm ${
-                  isCenter
-                    ? 'text-xs sm:text-sm text-[#3D4A44] font-medium line-clamp-2'
-                    : 'text-xs text-slate-500 line-clamp-2'
-                }`}>
-                  {feature.description}
-                </p>
-
-                {/* Active Indicator Line on Center Card */}
-                {isCenter && (
-                  <div className="w-10 h-1 bg-[#00642F] rounded-full mt-3 animate-pulse" />
-                )}
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
 
-        {/* Bottom Navigation Arrows */}
-        <div className="flex items-center justify-center gap-4 mt-4 relative z-30">
-          {/* Left Scroll Arrow */}
-          <button
-            type="button"
-            onClick={handlePrev}
-            className="w-12 h-12 rounded-full border border-[#00642F]/30 bg-white/90 backdrop-blur-sm text-[#00642F] hover:bg-[#041B3B] hover:text-white hover:border-[#041B3B] flex items-center justify-center transition-all duration-200 shadow-md active:scale-90 cursor-pointer"
-            aria-label="Previous Advantage"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
-          {/* Right Scroll Arrow */}
-          <button
-            type="button"
-            onClick={handleNext}
-            className="w-12 h-12 rounded-full border border-[#00642F]/30 bg-white/90 backdrop-blur-sm text-[#00642F] hover:bg-[#041B3B] hover:text-white hover:border-[#041B3B] flex items-center justify-center transition-all duration-200 shadow-md active:scale-90 cursor-pointer"
-            aria-label="Next Advantage"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
+        {/* Bottom Exactly 3 Pagination Dots */}
+        <div className="flex items-center justify-center gap-2.5 sm:gap-3 mt-8 sm:mt-10">
+          {Array.from({ length: totalPages }).map((_, dotIdx) => {
+            const isActive = dotIdx === currentPage;
+            return (
+              <button
+                key={dotIdx}
+                type="button"
+                onClick={() => setCurrentPage(dotIdx)}
+                aria-label={`Go to page ${dotIdx + 1}`}
+                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  isActive 
+                    ? 'w-7 sm:w-9 bg-white shadow-md' 
+                    : 'w-2.5 bg-white/40 hover:bg-white/70'
+                }`}
+              />
+            );
+          })}
         </div>
 
       </div>

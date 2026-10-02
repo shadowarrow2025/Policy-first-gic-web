@@ -213,7 +213,7 @@ export const CategoryShowcaseSection = ({ onOpenQuoteModal, selectedCategory, se
                     <div className="space-y-2.5">
                       {currentProduct.coverageDetails.includes.map((inc, i) => (
                         <div key={i} className="flex items-center gap-2.5 text-sm font-semibold text-slate-700">
-                          <CheckCircle2 className="w-4.5 h-4.5 text-emerald-600 shrink-0" />
+                          <CheckCircle2 className="w-4.5 h-4.5 text-[#E22419] shrink-0" />
                           <span>{inc}</span>
                         </div>
                       ))}

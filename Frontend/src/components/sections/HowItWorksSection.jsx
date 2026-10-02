@@ -39,7 +39,7 @@ export const HowItWorksSection = () => {
               Our Work Process
             </h2>
             <p className="mt-2 text-sm sm:text-base text-slate-500 leading-relaxed font-normal">
-              Getting your vehicle, family health, or business insured shouldn't be complicated. Here is how seamless and fast it is with Policy First.
+              Getting your vehicle, family health, or business insured shouldn't be complicated. Here is how seamless and fast it is with Policy First General Insurance.
             </p>
           </div>
         </ScrollReveal>
@@ -125,8 +125,8 @@ export const HowItWorksSection = () => {
                     
                     {/* Floating Icon with Subtle Pastel Watermark Accent */}
                     <div className="relative inline-flex items-center justify-center mb-5">
-                      <div className="w-7 h-7 rounded-full bg-emerald-100/70 absolute -top-1 -right-1 -z-10" />
-                      <IconComp className="w-8 h-8 sm:w-9 sm:h-9 text-[#00642F] stroke-[1.75]" />
+                      <div className="w-7 h-7 rounded-full bg-red-100/70 absolute -top-1 -right-1 -z-10" />
+                      <IconComp className="w-8 h-8 sm:w-9 sm:h-9 text-[#E22419] stroke-[1.75]" />
                     </div>
 
                     {/* Step Title (Matched to ProductCard heading font size) */}

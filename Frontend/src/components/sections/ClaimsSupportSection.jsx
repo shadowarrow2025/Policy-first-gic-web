@@ -3,14 +3,15 @@ import { SectionHeader } from '../common/SectionHeader';
 import { Button } from '../common/Button';
 import { ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../common/ScrollReveal';
+import { CONTACT_INFO } from '../../config/contact';
 
 export const ClaimsSupportSection = ({ onOpenClaimModal }) => {
   return (
     <section id="claims" className="py-24 bg-white relative overflow-hidden border-b border-slate-100">
       
       {/* Background Graphic Ambient Accent */}
-      <div className="absolute -top-24 right-0 w-96 h-96 bg-blue-50/50 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 left-0 w-96 h-96 bg-emerald-50/50 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-24 right-0 w-96 h-96 bg-red-50/50 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-24 left-0 w-96 h-96 bg-red-50/50 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -34,7 +35,7 @@ export const ClaimsSupportSection = ({ onOpenClaimModal }) => {
                   Report Incident
                 </h4>
                 <p className="text-sm text-slate-500 leading-relaxed font-normal">
-                  Call our claims officer immediately at +91 88074 02191 or ping us on WhatsApp.
+                  Call our claims officer immediately at {CONTACT_INFO.primaryPhone} or ping us on WhatsApp.
                 </p>
               </div>
 
@@ -114,13 +115,13 @@ export const ClaimsSupportSection = ({ onOpenClaimModal }) => {
 
         </div>
 
-        {/* Centered Get a Quote Action Button (Transparent Outline Button with Green Hover) */}
+        {/* Centered Get a Quote Action Button */}
         <div className="mt-14 text-center">
           <ScrollReveal animation="zoom-in" delay={350}>
             <button
               type="button"
               onClick={onOpenClaimModal}
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-transparent border-2 border-[#00642F] text-[#00642F] hover:bg-[#00642F] hover:text-white font-bold text-base shadow-xs hover:shadow-lg hover:shadow-[#00642F]/20 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-transparent border-2 border-[#E22419] text-[#E22419] hover:bg-[#E22419] hover:text-white font-bold text-base shadow-xs hover:shadow-lg hover:shadow-[#E22419]/20 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group"
             >
               <span>Get a Quote Now</span>
               <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-0.5 transition-transform duration-200" />

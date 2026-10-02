@@ -15,6 +15,8 @@ import { PartnersSection } from './components/sections/PartnersSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { Footer } from './components/layout/Footer';
 
+import { CONTACT_INFO } from './config/contact';
+
 export function App() {
   const [selectedShowcaseCategory, setSelectedShowcaseCategory] = useState('two-wheeler');
 
@@ -23,7 +25,7 @@ export function App() {
     if (contactElem) {
       contactElem.scrollIntoView({ behavior: 'smooth' });
     } else {
-      window.location.href = 'tel:+918807402191';
+      window.location.href = `tel:${CONTACT_INFO.primaryPhone.replace(/\s+/g, '')}`;
     }
   };
 
@@ -37,7 +39,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans selection:bg-[#082F61] selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans selection:bg-[#E22419] selection:text-white">
       {/* 1. Main Navigation Bar */}
       <Navbar onOpenQuoteModal={handleOpenQuoteModal} />
 
@@ -51,7 +53,7 @@ export function App() {
       <HowItWorksSection onOpenQuoteModal={handleOpenQuoteModal} />
 
       {/* 6. Why Choose Trust Insurance */}
-      <WhyUsSection />
+      <WhyUsSection onOpenQuoteModal={handleOpenQuoteModal} />
 
       {/* 7. Trust Statistics */}
       <StatsSection onOpenQuoteModal={handleOpenQuoteModal} />

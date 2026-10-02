@@ -15,7 +15,7 @@ export const StatsSection = ({ onOpenQuoteModal }) => {
       {/* ======= TOP CURVED WAVE ======= */}
       <div className="w-full overflow-hidden leading-none">
         <svg
-          className="relative block w-full h-8 sm:h-14 lg:h-18 text-[#00642F]"
+          className="relative block w-full h-8 sm:h-14 lg:h-18 text-[#E22419]"
           viewBox="0 0 1440 80"
           preserveAspectRatio="none"
           fill="currentColor"
@@ -25,10 +25,10 @@ export const StatsSection = ({ onOpenQuoteModal }) => {
       </div>
 
       {/* ======= MAIN CURVED BANNER BODY ======= */}
-      <section id="track-record" className="relative bg-[#00642F] text-white py-8 sm:py-12 lg:py-16">
+      <section id="track-record" className="relative bg-[#E22419] text-white py-8 sm:py-12 lg:py-16">
         
         {/* Subtle Radial Glow in background */}
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-400/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-red-400/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -43,7 +43,7 @@ export const StatsSection = ({ onOpenQuoteModal }) => {
                     
                     {/* Stat 1: Happy Customers */}
                     <div className="py-6 sm:py-8 pr-4 sm:pr-8 border-r border-white/30 flex flex-col justify-center text-center sm:text-left group cursor-default">
-                      <p className="text-sm sm:text-base font-medium text-emerald-100/90 tracking-wide group-hover:text-white transition-colors">
+                      <p className="text-sm sm:text-base font-medium text-red-100/90 tracking-wide group-hover:text-white transition-colors">
                         Happy Customers
                       </p>
                       <p className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mt-2.5 group-hover:scale-105 transition-transform duration-300">
@@ -53,7 +53,7 @@ export const StatsSection = ({ onOpenQuoteModal }) => {
 
                     {/* Stat 2: Cities / Partner Garages */}
                     <div className="py-6 sm:py-8 pl-4 sm:pl-8 flex flex-col justify-center text-center sm:text-left group cursor-default">
-                      <p className="text-sm sm:text-base font-medium text-emerald-100/90 tracking-wide group-hover:text-white transition-colors">
+                      <p className="text-sm sm:text-base font-medium text-red-100/90 tracking-wide group-hover:text-white transition-colors">
                         Partner Insurers
                       </p>
                       <p className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mt-2.5 group-hover:scale-105 transition-transform duration-300">
@@ -68,7 +68,7 @@ export const StatsSection = ({ onOpenQuoteModal }) => {
                     
                     {/* Stat 3: Insurance Categories */}
                     <div className="py-6 sm:py-8 pr-4 sm:pr-8 border-r border-white/30 flex flex-col justify-center text-center sm:text-left group cursor-default">
-                      <p className="text-sm sm:text-base font-medium text-emerald-100/90 tracking-wide group-hover:text-white transition-colors">
+                      <p className="text-sm sm:text-base font-medium text-red-100/90 tracking-wide group-hover:text-white transition-colors">
                         Insurance Plans
                       </p>
                       <p className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mt-2.5 group-hover:scale-105 transition-transform duration-300">
@@ -78,7 +78,7 @@ export const StatsSection = ({ onOpenQuoteModal }) => {
 
                     {/* Stat 4: Claim Settlement Ratio */}
                     <div className="py-6 sm:py-8 pl-4 sm:pl-8 flex flex-col justify-center text-center sm:text-left group cursor-default">
-                      <p className="text-sm sm:text-base font-medium text-emerald-100/90 tracking-wide group-hover:text-white transition-colors">
+                      <p className="text-sm sm:text-base font-medium text-red-100/90 tracking-wide group-hover:text-white transition-colors">
                         Claims Settled
                       </p>
                       <p className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mt-2.5 group-hover:scale-105 transition-transform duration-300">
@@ -97,7 +97,7 @@ export const StatsSection = ({ onOpenQuoteModal }) => {
               <ScrollReveal animation="fade-left" delay={200} duration={600}>
                 
                 {/* Eyebrow */}
-                <p className="text-xs sm:text-sm font-extrabold text-emerald-300 uppercase tracking-widest">
+                <p className="text-xs sm:text-sm font-extrabold text-red-200 uppercase tracking-widest">
                   FEATURED TRUST STORY
                 </p>
 
@@ -107,7 +107,7 @@ export const StatsSection = ({ onOpenQuoteModal }) => {
                 </h2>
 
                 {/* Description Paragraph matching template style */}
-                <p className="text-sm sm:text-base text-emerald-100/90 leading-relaxed font-normal pt-1 max-w-xl mx-auto lg:mx-0">
+                <p className="text-sm sm:text-base text-red-100/90 leading-relaxed font-normal pt-1 max-w-xl mx-auto lg:mx-0">
                   Policy First General Insurance provides tailored vehicle, commercial, and personal health protection with complete transparency. We bring cashless garage network support, instant digital policy issuance, and dedicated claim assistance so you stay protected always.
                 </p>
 
@@ -115,14 +115,14 @@ export const StatsSection = ({ onOpenQuoteModal }) => {
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
                   <button
                     onClick={() => onOpenQuoteModal && onOpenQuoteModal()}
-                    className="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-white hover:bg-emerald-50 text-[#00642F] font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                    className="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-white hover:bg-red-50 text-[#E22419] font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
                   >
                     GET A QUOTE
                   </button>
 
                   <button
                     onClick={scrollToProducts}
-                    className="w-full sm:w-auto px-8 py-3.5 rounded-lg border-2 border-white text-white hover:bg-white hover:text-[#00642F] font-extrabold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 cursor-pointer"
+                    className="w-full sm:w-auto px-8 py-3.5 rounded-lg border-2 border-white text-white hover:bg-white hover:text-[#E22419] font-extrabold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 cursor-pointer"
                   >
                     OUR PRODUCTS
                   </button>
@@ -139,7 +139,7 @@ export const StatsSection = ({ onOpenQuoteModal }) => {
       {/* ======= BOTTOM CURVED WAVE ======= */}
       <div className="w-full overflow-hidden leading-none">
         <svg
-          className="relative block w-full h-8 sm:h-14 lg:h-18 text-[#00642F]"
+          className="relative block w-full h-8 sm:h-14 lg:h-18 text-[#E22419]"
           viewBox="0 0 1440 80"
           preserveAspectRatio="none"
           fill="currentColor"

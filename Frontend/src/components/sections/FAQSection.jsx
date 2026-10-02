@@ -24,8 +24,8 @@ export const FAQSection = () => {
     <section id="faq" className="py-16 md:py-24 bg-[#FAFAF8] border-b border-slate-200/80 relative overflow-hidden">
       
       {/* Background Soft Glows */}
-      <div className="absolute top-1/4 left-10 w-72 h-72 bg-emerald-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-10 w-72 h-72 bg-emerald-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-10 w-72 h-72 bg-red-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-red-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -37,7 +37,7 @@ export const FAQSection = () => {
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#2C2C2A] leading-[1.15]">
               Frequently <br />
-              <span className="text-[#00642F]">asked questions</span>
+              <span className="text-[#E22419]">asked questions</span>
             </h2>
           </div>
         </ScrollReveal>
@@ -115,7 +115,7 @@ export const FAQSection = () => {
                 <div className="w-full">
                   <button
                     onClick={scrollToContact}
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#00642F] hover:bg-[#004e24] text-white font-bold text-sm sm:text-base shadow-md shadow-[#00642F]/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#E22419] hover:bg-[#B91C1C] text-white font-bold text-sm sm:text-base shadow-md shadow-[#E22419]/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
                   >
                     <span>Shoot a Direct Mail</span>
                     <ArrowRight className="w-4 h-4 shrink-0" />

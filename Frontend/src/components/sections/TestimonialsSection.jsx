@@ -11,8 +11,8 @@ export const TestimonialsSection = () => {
     <section id="testimonials" className="py-20 md:py-24 bg-white relative overflow-hidden">
       
       {/* Background Soft Glows */}
-      <div className="absolute top-10 left-1/4 w-96 h-96 bg-emerald-50/60 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-emerald-50/60 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-10 left-1/4 w-96 h-96 bg-red-50/60 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-red-50/60 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-12 sm:mb-16">
         
@@ -55,7 +55,7 @@ export const TestimonialsSection = () => {
                     {/* Quotation Mark & Star Ratings */}
                     <div className="flex items-center justify-between mb-3">
                       <span 
-                        style={{ color: review.quoteColor || '#00642F' }}
+                        style={{ color: review.quoteColor || '#E22419' }}
                         className="text-4xl sm:text-5xl font-serif font-black leading-none select-none opacity-90"
                       >
                         “
@@ -75,7 +75,7 @@ export const TestimonialsSection = () => {
 
                   {/* Verified Badge */}
                   <div className="mt-4 pt-3 border-t border-slate-100/80">
-                    <span className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md ${review.badgeClass || 'bg-emerald-50 text-[#00642F]'}`}>
+                    <span className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md ${review.badgeClass || 'bg-red-50 text-[#E22419]'}`}>
                       ✓ {review.verifiedClaim}
                     </span>
                   </div>
@@ -90,7 +90,7 @@ export const TestimonialsSection = () => {
                       className="w-full h-full block"
                       viewBox="0 0 500 100"
                       preserveAspectRatio="none"
-                      fill={review.waveColor || '#00642F'}
+                      fill={review.waveColor || '#E22419'}
                     >
                       <path d="M0,45 C150,95 350,0 500,55 L500,100 L0,100 Z" />
                     </svg>
@@ -109,11 +109,11 @@ export const TestimonialsSection = () => {
                   </div>
 
                   {/* Colored Bottom Bar Content */}
-                  <div className={`${review.footerBg || 'bg-[#00642F]'} text-white pb-5 pt-1.5 px-4 text-center`}>
+                  <div className={`${review.footerBg || 'bg-[#E22419]'} text-white pb-5 pt-1.5 px-4 text-center`}>
                     <h4 className="font-bold text-sm sm:text-base text-white tracking-tight">
                       {review.name}
                     </h4>
-                    <p className="text-[11px] sm:text-xs text-emerald-100/90 font-medium mt-0.5">
+                    <p className="text-[11px] sm:text-xs text-red-100/90 font-medium mt-0.5">
                       {review.role} • {review.location}
                     </p>
                   </div>
